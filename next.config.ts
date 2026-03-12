@@ -1,12 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // 👇 This replaces `next export`
+  // 👇 This replaces the old `next export` command
   output: "export",
 
   experimental: {
     serverActions: {
-      // optional settings
+      // You can add allowedOrigins or bodySizeLimit here if needed
     },
   },
   env: {
@@ -15,4 +15,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
