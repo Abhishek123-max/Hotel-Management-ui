@@ -113,7 +113,7 @@ axiosInstance.interceptors.response.use(
             }
           }
           return newAccessToken || null;
-        } catch (e) {
+        } catch {
           return null;
         } finally {
           isRefreshing = false;

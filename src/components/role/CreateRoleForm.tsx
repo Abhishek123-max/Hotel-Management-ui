@@ -8,7 +8,6 @@ import { roleService } from "@/api/roles";
 import { CreateRoleRequest } from "@/types/roles";
 
 interface CreateRoleFormProps {
-  isOpen?: boolean;
   onClose?: () => void;
 }
 
@@ -21,9 +20,7 @@ interface PermissionSet {
   import: boolean;
 }
 
-type PermissionCategory = Record<string, PermissionSet>;
-
-const CreateRoleForm: React.FC<CreateRoleFormProps> = ({ isOpen, onClose }) => {
+const CreateRoleForm: React.FC<CreateRoleFormProps> = ({ onClose }) => {
   const [roleName, setRoleName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [showSuccess, setShowSuccess] = useState<boolean>(false);

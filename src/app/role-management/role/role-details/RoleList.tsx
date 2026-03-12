@@ -1,34 +1,15 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import Image from "next/image";
 import Table from "@/components/table/Table";
 import Button from "@/components/ui/Button";
 import SearchInput from "@/components/ui/SearchInput";
 import ActionDropdown from "@/components/actiondropdown/ActionDropdown";
-import useNavigation from "@/hooks/useNavigation";
 import Drawer from "@/components/ui/Drawer";
 import RoleDetails from "@/components/role/RoleDetails";
-import Popup from "@/components/ui/Popup";
 import Pagination from "@/components/pagination/Pagination";
 import { roleService } from "@/api/roles";
 import { Role } from "@/types/roles";
-
-// Dummy avatars
-import User1 from "@/assests/users/user1.png";
-import User2 from "@/assests/users/user2.png";
-import User3 from "@/assests/users/user3.png";
-import User4 from "@/assests/users/user4.png";
-
-const staffAvatars: Record<string, any> = {
-  shreya: User1,
-  aman: User2,
-  abhinav: User3,
-  tejas: User4,
-  emma: User1,
-  john: User3,
-  sara: User4,
-};
 
 interface RoleListProps {
   onCreateRole: () => void;
@@ -40,11 +21,9 @@ const RoleList: React.FC<RoleListProps> = ({ onCreateRole }) => {
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
-  const [openStaffPopupId, setOpenStaffPopupId] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
   const rowsPerPage = 10;
-  const { handleCreateRole } = useNavigation();
 
   // ✅ Fetch roles from API
   useEffect(() => {

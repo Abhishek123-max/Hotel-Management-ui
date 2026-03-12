@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import Input from "@/components/ui/Input";
@@ -80,9 +81,12 @@ const BasicDetailsForm = ({ onNext, initialValues }: BasicDetailsFormProps) => {
         <div className="flex flex-row items-start space-y-2 gap-5">
           <div className="py-2">
             {logoPreview ? (
-              <img
+              <Image
                 src={logoPreview}
                 alt="Logo preview"
+                width={71}
+                height={71}
+                unoptimized
                 className="max-w-[71px] max-h-[71px] rounded-md object-cover border border-green-200"
               />
             ) : (

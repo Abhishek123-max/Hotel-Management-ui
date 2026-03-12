@@ -139,7 +139,7 @@ const RoleDetails: React.FC<RoleDetailsProps> = ({ role }) => {
                 </h4>
                 <div className="flex flex-wrap gap-3 mt-1 ml-2 text-[13px] text-gray-600">
                   {Object.entries(perms)
-                    .filter(([_, allowed]) => allowed)
+                    .filter(([, allowed]) => allowed)
                     .map(([perm]) => (
                       <span key={perm} className="bg-[#E9F9EE] px-2 py-1 rounded-md text-[#2FAC3E]">
                         {perm}

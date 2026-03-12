@@ -5,27 +5,6 @@ import { Eye, EyeOff } from "lucide-react";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
-import Tooltip, { tooltipClasses, TooltipProps } from "@mui/material/Tooltip";
-import { styled } from "@mui/material/styles";
-
-
-// 🔹 Custom Red Tooltip with Arrow
-const ErrorTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} arrow classes={{ popper: className }} />
-))(() => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: "#EF4444", // Tailwind red-500
-    color: "#fff",
-    fontSize: "12px",
-    fontWeight: 500,
-    padding: "6px 10px",
-    borderRadius: "6px",
-    maxWidth: 220,
-  },
-  [`& .${tooltipClasses.tooltipPlacementTop}`]: {
-    color: "#EF4444",
-  },
-}));
 
 // 🔹 Define Props for Input
 interface InputProps extends Omit<TextFieldProps, "error"> {
@@ -33,7 +12,6 @@ interface InputProps extends Omit<TextFieldProps, "error"> {
   type?: string;
   placeholder?: string;
   error?: boolean | string;
-  bordershadow?: boolean;
   required?: boolean;
   tooltip?:string;
   errori?:string;
@@ -50,7 +28,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       type = "text",
       placeholder,
       error,
-      bordershadow,
       required = false,
       tooltip = '',
       errori = '',

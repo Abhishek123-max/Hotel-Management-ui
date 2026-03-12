@@ -45,9 +45,9 @@ export const roleService = {
         method: "GET",
       });
       return apiResponse;
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Error fetching roles:", error);
-      throw new Error(error.message || "Failed to fetch roles");
+      throw new Error("Failed to fetch roles");
     }
   },
 };

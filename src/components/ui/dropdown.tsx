@@ -53,7 +53,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         value={value}
         onChange={onChange}
         onBlur={(e) => {
-          onBlur && onBlur(e);
+          if (onBlur) onBlur(e);
           setOpen(false);
         }}
         className={`w-full px-4 py-3 rounded-lg border-2 focus:outline-green-500 focus:shadow-[0_0_5px_1px_rgba(84,255,75,0.75)] appearance-none ${className}`}

@@ -1,6 +1,5 @@
 'use client';
-import React, { useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import React from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 /* import Button from '@/components/ui/Button'; */
 import Sidebar from "@/components/sidemenu/Sidebar";
@@ -10,26 +9,7 @@ import Header from "@/components/header/Header";
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
 export default function AdminDashboardPage() {
-  const router = useRouter();
   const { theme } = useTheme();
-
-  const handleLogout = useCallback(() => {
-    try {
-      localStorage.removeItem('access_token');
-      localStorage.removeItem('refresh_token');
-      localStorage.removeItem('user');
-    } catch {}
-    router.replace('/');
-  }, [router]);
-
-  const user = (() => {
-    try {
-      const raw = typeof window !== 'undefined' ? localStorage.getItem('user') : null;
-      return raw ? JSON.parse(raw) : null;
-    } catch {
-      return null;
-    }
-  })();
 
   return (
     <div className={`${poppins.className} flex`}>

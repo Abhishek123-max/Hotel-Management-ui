@@ -1,17 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import role from "@/assets/role.png"; // ✅ Fixed typo: 'assests' → 'assets'
 import RoleList from "@/app/role-management/role/role-details/RoleList";
-import EmptyState from "@/components/emptyState/EmptyState";
 import Drawer from "@/components/ui/Drawer";
-import { useRouter } from "next/navigation";
-import useNavigation from "@/hooks/useNavigation";
 import CreateRoleForm from "@/components/role/CreateRoleForm";
 
 const RoleManagement: React.FC = () => {
-  const router = useRouter();
-  const { handleBack } = useNavigation();
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
   // ✅ Open Drawer

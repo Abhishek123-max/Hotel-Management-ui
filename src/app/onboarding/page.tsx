@@ -17,7 +17,7 @@ import { Stepper1, Stepper2, Stepper3, Stepper4, Stepper5 } from '@/assests/svgi
 // ----------------------
 // 🔹 Custom Styled Connector (to mimic your green line)
 // ----------------------
-const CustomConnector = styled(StepConnector)(({ theme }) => ({
+const CustomConnector = styled(StepConnector)(() => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 22,
   },

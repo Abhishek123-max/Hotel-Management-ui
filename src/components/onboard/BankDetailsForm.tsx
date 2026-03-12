@@ -4,7 +4,6 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
-import { MenuItem, TextField } from '@mui/material';
 import { useTheme } from '@/contexts/ThemeContext';
 import Dropdown from '@/components/ui/dropdown';
 import { BankDetailsData } from '@/types/onboarding';
