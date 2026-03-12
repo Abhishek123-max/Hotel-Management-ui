@@ -9,9 +9,10 @@ import Button from '@/components/ui/Button';
 
 interface LoginFormProps {
   onSuccess?: (user: UserPayload) => void;
+  onSuperAdmin?: () => void;
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({ onSuccess, }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ onSuccess, onSuperAdmin }) => {
   const { theme } = useTheme();
   const { login, loading, errors, clearErrors } = useLogin();
   const [snackbar, setSnackbar] = useState<{ open: boolean; message: string }>({ open: false, message: '' });
@@ -117,6 +118,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess, }) => {
             >
               {loading ? 'Logging in...' : 'Login'}
             </Button>
+            {onSuperAdmin && (
+              <button
+                type="button"
+                onClick={onSuperAdmin}
+                className="mt-4 w-full text-sm font-semibold underline"
+                style={{ color: theme.secondary }}
+              >
+                Super Admin Login
+              </button>
+            )}
           </form>
         )}
       </Formik>
