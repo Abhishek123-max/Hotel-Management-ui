@@ -1,13 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // 👇 This replaces the old `next export` command
+  // 👇 This replaces the old `next export`
   output: "export",
 
   experimental: {
-    serverActions: {
-      // You can add allowedOrigins or bodySizeLimit here if needed
-    },
+    serverActions: {},
   },
   env: {
     API_BASE_URL: process.env.API_BASE_URL,
