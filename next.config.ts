@@ -1,12 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // 👇 This tells Next.js to generate static HTML in `out/`
+  // 👇 This replaces `next export`
   output: "export",
 
   experimental: {
     serverActions: {
-      // You can add allowedOrigins or bodySizeLimit here if needed
+      // optional settings
     },
   },
   env: {
@@ -15,3 +15,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
